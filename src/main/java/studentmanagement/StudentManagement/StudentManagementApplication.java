@@ -26,7 +26,7 @@ public class StudentManagementApplication {
 
 	// アプリ起動時に3名を初期登録
 	public StudentManagementApplication() {
-		studentMap.put("春美", "25");
+		studentMap.put("春美", "24");
 		studentMap.put("太郎", "30");
 		studentMap.put("花子", "28");
 	}
