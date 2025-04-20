@@ -10,4 +10,10 @@ public class ServletInitializer extends SpringBootServletInitializer {
     return application.sources(StudentManagementApplication.class);
   }
 
+  public static class students {
+    private  String name;
+    private  int age;
+
+
+  }
 }
