@@ -46,7 +46,7 @@ public class StudentManagementApplication {
 		public void updateStudentName(String name,int age) {
 			repository.updateStudent(name, age);
 		}
-
+//テスト
 	@DeleteMapping("/student")
 			public void deleteStudent(String name) {
 		repository.deleteStudent(name);
