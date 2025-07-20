@@ -8,13 +8,14 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface StudentRepository {
 
-  @Select("SELECT * FROM students")
-  List<Student> search();
+  @Select("SELECT * FROM students WHERE name = #{name}")
+  List<Student> searchByName(Student name);
 
-  @Select("SELECT * FROM students WHERE full_name = #{name}")
-  Student searchByName(String name);
+
+  @Select("SELECT * FROM students")
+  List<Student> findAll();
 
   @Insert("INSERT INTO students(full_name, furigana, nickname, email, region, age, gender) " +
-      "VALUES(#{fullName}, #{furigana}, #{nickname}, #{email}, #{region}, #{age}, #{gender})")
+      "VALUES(#{fullName}, #{KanaName}, #{nickname}, #{email}, #{area}, #{age}, #{sex})")
   void insertStudent(Student student);
 }

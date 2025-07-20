@@ -1,14 +1,19 @@
 package studentmanagement.StudentManagement;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Student {
   private Long id;
-  private String fullName;
-  private String furigana;
+  private String Name;
+  private String KanaName;
   private String nickname;
   private String email;
-  private String region;
+  private String area;
   private int age;
-  private String gender;
+  private String sex;
 
 //  public Student(Long id, String fullName, String furigana, String nickname,
 //      String email, String region, int age, String gender) {

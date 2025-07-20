@@ -6,13 +6,22 @@ import java.util.*;
 @RestController
 public class StudentController {
 
-  private StudentRepository repository;
+  private final StudentRepository repository;
+  private final StudentCourseRepository courseRepository;
+
 
   private List<Student> studentList = new ArrayList<>();
   private List<StudentCourse> courseList = new ArrayList<>();
 
   private Long studentIdCounter = 1L;
   private Long courseIdCounter = 1L;
+
+
+  public StudentController(StudentRepository studentRepository,
+      StudentCourseRepository courseRepository) {
+    this.repository = studentRepository;
+    this.courseRepository = courseRepository;
+  }
 
   // 受講生登録
 //  @PostMapping("/student")
@@ -36,32 +45,32 @@ public class StudentController {
   @GetMapping("/students")
   public List<Student> getAllStudents() {
     //return studentList;
-    return repository.search();
+    return (List<Student>) repository.findAll();
   }
 
-  // ✅ 受講生コース登録エンドポイントを統一
-//  @PostMapping("/students_courses")
-//  public String addStudentCourse(
-//      @RequestParam Long studentId,
-//      @RequestParam String courseName,
-//      @RequestParam String startDate,
-//      @RequestParam String expectedEndDate) {
-//
-//    boolean studentExists = studentList.stream().anyMatch(s -> s.getId().equals(studentId));
-//    if (!studentExists) {
-//      return "Error: Student ID not found.";
-//    }
-//
-//    StudentCourse course = new StudentCourse(
-//        courseIdCounter++, studentId, courseName, startDate, expectedEndDate
-//    );
-//    courseList.add(course);
-//    return "Course added for student ID " + studentId + ": " + courseName;
-//  }
-//
-//  // 受講生コース一覧取得
-//  @GetMapping("/students_courses")
-//  public List<StudentCourse> getAllCourses() {
-//    return courseList;
-//  }
+   // 受講生コース登録エンドポイントを統一
+ @PostMapping("/students_courses")
+ public String addStudentCourse(
+      @RequestParam Long studentId,
+      @RequestParam String courseName,
+      @RequestParam String startDate,
+      @RequestParam String expectedEndDate) {
+
+    boolean studentExists = studentList.stream().anyMatch(s -> s.getId().equals(studentId));
+    if (!studentExists) {
+      return "Error: Student ID not found.";
+    }
+
+    StudentCourse course = new StudentCourse(
+        courseIdCounter++, studentId, courseName, startDate, expectedEndDate
+    );
+    courseList.add(course);
+    return "Course added for student ID " + studentId + ": " + courseName;
+  }
+
+  // 受講生コース一覧取得
+  @GetMapping("/students_courses")
+  public List<StudentCourse> getAllCourses() {
+    return courseRepository.findAll();
+  }
 }
