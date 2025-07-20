@@ -1,30 +1,33 @@
 package studentmanagement.StudentManagement;
 
 public class Student {
-
-  private String name;
+  private Long id;
+  private String fullName;
+  private String furigana;
+  private String nickname;
+  private String email;
+  private String region;
   private int age;
+  private String gender;
 
-  public Student(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public void setAge(int age) {
-    this.age = age;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-
+//  public Student(Long id, String fullName, String furigana, String nickname,
+//      String email, String region, int age, String gender) {
+//    this.id = id;
+//    this.fullName = fullName;
+//    this.furigana = furigana;
+//    this.nickname = nickname;
+//    this.email = email;
+//    this.region = region;
+//    this.age = age;
+//    this.gender = gender;
+//  }
+//
+//  public Long getId() { return id; }
+//  public String getFullName() { return fullName; }
+//  public String getFurigana() { return furigana; }
+//  public String getNickname() { return nickname; }
+//  public String getEmail() { return email; }
+//  public String getRegion() { return region; }
+//  public int getAge() { return age; }
+//  public String getGender() { return gender; }
 }
