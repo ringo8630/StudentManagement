@@ -1,0 +1,167 @@
+Index: src/test/java/studentmanagement/StudentManagement/StudentManagementApplicationTests.java
+===================================================================
+diff --git a/src/test/java/studentmanagement/StudentManagement/StudentManagementApplicationTests.java b/src/test/java/studentmanagement/StudentManagementApplicationTests.java
+rename from src/test/java/studentmanagement/StudentManagement/StudentManagementApplicationTests.java
+rename to src/test/java/studentmanagement/StudentManagementApplicationTests.java
+--- a/src/test/java/studentmanagement/StudentManagement/StudentManagementApplicationTests.java	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
++++ b/src/test/java/studentmanagement/StudentManagementApplicationTests.java	(date 1753598726923)
+@@ -1,4 +1,4 @@
+-package studentmanagement.StudentManagement;
++package studentmanagement;
+ 
+ import org.junit.jupiter.api.Test;
+ import org.springframework.boot.test.context.SpringBootTest;
+Index: src/main/java/studentmanagement/StudentManagement/StudentController.java
+===================================================================
+diff --git a/src/main/java/studentmanagement/StudentManagement/StudentController.java b/src/main/java/studentmanagement/StudentManagement/StudentController.java
+deleted file mode 100644
+--- a/src/main/java/studentmanagement/StudentManagement/StudentController.java	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
++++ /dev/null	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
+@@ -1,76 +0,0 @@
+-package studentmanagement.StudentManagement;
+-
+-import org.springframework.web.bind.annotation.*;
+-import java.util.*;
+-
+-@RestController
+-public class StudentController {
+-
+-  private final StudentRepository repository;
+-  private final StudentCourseRepository courseRepository;
+-
+-
+-  private List<Student> studentList = new ArrayList<>();
+-  private List<StudentCourse> courseList = new ArrayList<>();
+-
+-  private Long studentIdCounter = 1L;
+-  private Long courseIdCounter = 1L;
+-
+-
+-  public StudentController(StudentRepository studentRepository,
+-      StudentCourseRepository courseRepository) {
+-    this.repository = studentRepository;
+-    this.courseRepository = courseRepository;
+-  }
+-
+-  // 受講生登録
+-//  @PostMapping("/student")
+-//  public String addStudent(
+-//      @RequestParam String fullName,
+-//      @RequestParam(required = false) String furigana,
+-//      @RequestParam(required = false) String nickname,
+-//      @RequestParam String email,
+-//      @RequestParam(required = false) String region,
+-//      @RequestParam int age,
+-//      @RequestParam String gender) {
+-//
+-//    Student student = new Student(
+-//        studentIdCounter++, fullName, furigana, nickname, email, region, age, gender
+-//    );
+-//    studentList.add(student);
+-//    return "Student added: " + fullName;
+-//  }
+-
+-  // 受講生一覧取得
+-  @GetMapping("/students")
+-  public List<Student> getAllStudents() {
+-    //return studentList;
+-    return (List<Student>) repository.findAll();
+-  }
+-
+-   // 受講生コース登録エンドポイントを統一
+- @PostMapping("/students_courses")
+- public String addStudentCourse(
+-      @RequestParam Long studentId,
+-      @RequestParam String courseName,
+-      @RequestParam String startDate,
+-      @RequestParam String expectedEndDate) {
+-
+-    boolean studentExists = studentList.stream().anyMatch(s -> s.getId().equals(studentId));
+-    if (!studentExists) {
+-      return "Error: Student ID not found.";
+-    }
+-
+-    StudentCourse course = new StudentCourse(
+-        courseIdCounter++, studentId, courseName, startDate, expectedEndDate
+-    );
+-    courseList.add(course);
+-    return "Course added for student ID " + studentId + ": " + courseName;
+-  }
+-
+-  // 受講生コース一覧取得
+-  @GetMapping("/students_courses")
+-  public List<StudentCourse> getAllCourses() {
+-    return courseRepository.findAll();
+-  }
+-}
+Index: src/main/java/studentmanagement/StudentManagement/StudentCourseRepository.java
+===================================================================
+diff --git a/src/main/java/studentmanagement/StudentManagement/StudentCourseRepository.java b/src/main/java/studentmanagement/StudentManagement/StudentCourseRepository.java
+deleted file mode 100644
+--- a/src/main/java/studentmanagement/StudentManagement/StudentCourseRepository.java	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
++++ /dev/null	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
+@@ -1,12 +0,0 @@
+-package studentmanagement.StudentManagement;
+-
+-import java.util.List;
+-import org.apache.ibatis.annotations.Mapper;
+-import org.apache.ibatis.annotations.Select;
+-
+-@Mapper
+-public interface StudentCourseRepository {
+-
+-  @Select("SELECT * FROM students_courses")
+-  List<StudentCourse> findAll();
+-}
+Index: build/resources/main/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=StudentManagement\n\nspring.datasource.url=jdbc:mysql://localhost:3306/student_system\nspring.datasource.username=root\nspring.datasource.password=harumi8630\nspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\n\nnybatis.configuration.map-underscore-to-camel-case=true\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/build/resources/main/application.properties b/build/resources/main/application.properties
+--- a/build/resources/main/application.properties	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
++++ b/build/resources/main/application.properties	(date 1753599993160)
+@@ -1,11 +1,11 @@
+ spring.application.name=StudentManagement
+ 
+-spring.datasource.url=jdbc:mysql://localhost:3306/student_system
++spring.datasource.url=jdbc:mysql://localhost:3306/StudentManagement
+ spring.datasource.username=root
+ spring.datasource.password=harumi8630
+ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ 
+-nybatis.configuration.map-underscore-to-camel-case=true
++mybatis.configuration.map-underscore-to-camel-case=true
+ 
+ 
+ 
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <bytecodeTargetLevel target=\"21\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision fd5edcbd6e6ccb49d12655aa1c9c8e958239eb3d)
++++ b/.idea/compiler.xml	(date 1752990272286)
+@@ -1,6 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile default="true" name="Default" enabled="true" />
++      <profile name="Gradle Imported" enabled="true">
++        <outputRelativeToContentRoot value="true" />
++        <processorPath useClasspath="false">
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
++        </processorPath>
++        <module name="StudentManagement.main" />
++      </profile>
++    </annotationProcessing>
+     <bytecodeTargetLevel target="21" />
+   </component>
+ </project>
+\ No newline at end of file

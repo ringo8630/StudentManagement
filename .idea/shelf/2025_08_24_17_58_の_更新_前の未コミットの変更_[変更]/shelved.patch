@@ -1,0 +1,42 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21_PREVIEW\" project-jdk-name=\"21\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 8e037f6b01f8aed88b39b36c132defd3e00c95a8)
++++ b/.idea/misc.xml	(date 1756025878191)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21_PREVIEW" project-jdk-name="21" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: build/resources/main/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=StudentManagement\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/build/resources/main/application.properties b/build/resources/main/application.properties
+--- a/build/resources/main/application.properties	(revision 8e037f6b01f8aed88b39b36c132defd3e00c95a8)
++++ b/build/resources/main/application.properties	(date 1756025839403)
+@@ -1,1 +1,11 @@
+ spring.application.name=StudentManagement
++
++spring.datasource.url=jdbc:mysql://localhost:3306/StudentManagement
++spring.datasource.username=root
++spring.datasource.password=harumi8630
++spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
++
++mybatis.configuration.map-underscore-to-camel-case=true
++
++
++

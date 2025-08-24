@@ -1,0 +1,10 @@
+<changelist name="2025_08_24_17_58_の_更新_前の未コミットの変更_[変更]" date="1756025897340" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/2025_08_24_17_58_の_更新_前の未コミットの変更_[変更]/shelved.patch" />
+  <option name="DESCRIPTION" value="2025/08/24 17:58 の 更新 前の未コミットの変更 [変更]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/studentmanagement/StudentManagement/StudentManagementApplication.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/studentmanagement/StudentManagement/Student.class" />
+  </binary>
+</changelist>
