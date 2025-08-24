@@ -1,0 +1,10 @@
+# JPA設定（Hibernate）
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# ログレベル（エラー調査用）
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.springframework=DEBUG
+logging.level.studentmanagement=DEBUG
