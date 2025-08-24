@@ -1,4 +1,10 @@
-package studentmanagement.StudentManagement;
+package studentmanagement.data;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 public class StudentCourse {
   private Long id;

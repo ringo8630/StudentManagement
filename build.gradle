@@ -8,12 +8,21 @@ plugins {
 group = 'studentmanagement'
 version = '0.0.1-SNAPSHOT'
 
+repositories {
+	mavenCentral()//
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 
+configurations {
+	compileOnly{
+		extendsFrom annotationProcessor
+	}
+}
 repositories {
 	mavenCentral()
 }
@@ -21,6 +30,9 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.apache.commons:commons-lang3:3.17.0'
+	//Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 
 	// MySQL ドライバ
 	runtimeOnly 'com.mysql:mysql-connector-j'
