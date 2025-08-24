@@ -14,6 +14,8 @@ public class Student {
   private String area;
   private int age;
   private String sex;
+  private String remark;
+  private boolean isDeleted;
 
 //  public Student(Long id, String fullName, String furigana, String nickname,
 //      String email, String region, int age, String gender) {
