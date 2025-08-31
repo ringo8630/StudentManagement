@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import studentmanagement.Repository.StudentRepository;
 import studentmanagement.data.Student;
 import studentmanagement.data.StudentCourse;
@@ -45,12 +44,12 @@ public class StudentService {
 
 
   // 受講生コース一覧（仮実装）
-  public List<StudentCourse> searchStudentCourseList() {
-    return repository.findCourse();
+  public List<StudentCourse> searchStudentCoursesList() {
+    return repository.findJavaCourses();
   }
 
   // 追加: Javaコースのみ取得
-  public List<StudentCourse> searchJavaCourseList() {
+  public List<StudentCourse> searchJavaCoursesList() {
     return repository.findJavaCourses(); // リポジトリの SQL で絞り込む
   }
 
@@ -58,7 +57,7 @@ public class StudentService {
 
 
   // 受講生コース登録（仮実装）
-  public String registerStudentCourse(Long studentId, String courseName, String startDate, String expectedEndDate) {
+  public String registerStudentCourses(Long studentId, String courseName, String startDate, String expectedEndDate) {
     // studentIdの存在チェック（簡易版）
     boolean studentExists = studentList.stream().anyMatch(s -> s.getId().equals(studentId));
     if (!studentExists) {

@@ -17,6 +17,12 @@ import studentmanagement.data.StudentCourse;
 public interface StudentRepository {
 
   @Select("SELECT * FROM students")
+  List<Student> search();
+
+  @Select("SELECT * FROM students_courses")
+  List<StudentCourse> searchStudentsCourses();
+
+  @Select("SELECT * FROM students")
   List<Student> findAll(); // ← 全件検索
 
   @Select("SELECT * FROM students")
@@ -26,8 +32,6 @@ public interface StudentRepository {
   @Select("SELECT * FROM students_courses WHERE course_name = 'Javaコース'")
   List<StudentCourse> findJavaCourses();
 
-  @Select("SELECT * FROM students_courses")
-  List<StudentCourse> searchStudentsCourses();
 
 
   @Select("SELECT * FROM students WHERE name = #{name}")
