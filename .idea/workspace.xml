@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="005e7740-6119-4d39-98b9-ac0e1a7cfba2" name="変更" comment="マージ前のmainにて、不要ファイル修正" />
+    <list default="true" id="005e7740-6119-4d39-98b9-ac0e1a7cfba2" name="変更" comment=".gitignoreを追加">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/Repository/StudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/Repository/StudentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/StudentManagement/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/StudentManagement/StudentManagementApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/StudentManagement/StudentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/controller/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/controller/converter/StudentConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/data/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/data/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/domain/StudentDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/studentmanagement/service/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resolvedMainClassName" beforeDir="false" afterPath="$PROJECT_DIR$/build/resolvedMainClassName" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/studentmanagement/StudentManagement/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/studentmanagement/StudentManagement/StudentCourseRepository.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +70,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/kadai05" />
+    <option name="BRANCH" value="origin/第11回課題0727" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -91,6 +116,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/nhmbp/IdeaProjects/StudentManagement_N2/src/main/java",
     "last_opened_file_path": "/Users/nhmbp/IdeaProjects/StudentManagement_N2",
     "project.structure.last.edited": "プロジェクト",
     "project.structure.proportion": "0.0",
@@ -109,7 +135,7 @@
       <recent name="studentmanagement.service" />
     </key>
   </component>
-  <component name="RunManager" selected="アプリケーション.StudentManagementApplication">
+  <component name="RunManager" selected="アプリケーション.studentmanagement.StudentManagementApplication">
     <configuration name="StudentManagementApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
       <option name="MAIN_CLASS_NAME" value="StudentManagementApplication" />
@@ -265,7 +291,31 @@
       <option name="project" value="LOCAL" />
       <updated>1756026203564</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="課題５までをマージ">
+      <option name="closed" value="true" />
+      <created>1756026289695</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1756026289695</updated>
+    </task>
+    <task id="LOCAL-00012" summary="課題５までをマージ">
+      <option name="closed" value="true" />
+      <created>1756026371406</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1756026371406</updated>
+    </task>
+    <task id="LOCAL-00013" summary=".gitignoreを追加">
+      <option name="closed" value="true" />
+      <created>1756027151928</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1756027151928</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -278,6 +328,8 @@
     <MESSAGE value="第11回演習課題" />
     <MESSAGE value="第12回演習課題" />
     <MESSAGE value="マージ前のmainにて、不要ファイル修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="マージ前のmainにて、不要ファイル修正" />
+    <MESSAGE value="課題５までをマージ" />
+    <MESSAGE value=".gitignoreを追加" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignoreを追加" />
   </component>
 </project>
